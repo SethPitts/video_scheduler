@@ -1,0 +1,5 @@
+<form method="post" action={% url "video_upload" %}>
+    {%  csrf_token %}
+    {{ form }}
+    <input type="submit" value="ok">
+</form>
