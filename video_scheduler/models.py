@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Video(models.Model):
-    video_title = models.TextField(max_length=100, primary_key=True)
-    video_length = models.TextField(max_length=100)
-    video_description = models.TextField(max_length=100)
+    video_title = models.CharField(max_length=100, primary_key=True)
+    video_length = models.CharField(max_length=100)
+    video_description = models.CharField(max_length=100)
 
     def __repr__(self):
         return "Video Title {} : Description {} : Length{}".format(
