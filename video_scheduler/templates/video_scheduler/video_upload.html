@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+{% block title %}
+    <title>Video Upload</title>
+{% endblock %}
+{% block content %}
 <form method="post" action={% url "video_upload" %}>
     {%  csrf_token %}
     <table>
@@ -5,3 +10,4 @@
     </table>
     <input type="submit" value="ok">
 </form>
+{% endblock %}

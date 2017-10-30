@@ -1,7 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
+
 from .forms import VideoForm
 from .models import Video
+
+
 # Create your views here.
 
 def index(request):
@@ -18,9 +21,13 @@ def video_upload(request):
             video = Video(video_title, video_length, video_description)
             video.save()
             print("in post")
-            return HttpResponseRedirect('/video_scheduler/video_upload/')
+            return HttpResponseRedirect('/video_scheduler/video_upload_successful/')
     else:
         print("in get")
         form = VideoForm()
 
     return render(request, 'video_scheduler/video_upload.html', {'form': form})
+
+
+def video_upload_successful(request):
+    return render(request, 'video_scheduler/video_upload_successful.html', dict())

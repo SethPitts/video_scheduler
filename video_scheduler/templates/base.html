@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    {% block title %}
+        <title>Video Scheduler</title>
+    {% endblock %}
 </head>
+<nav>
+    <a href="{% url "index" %}">Main Page</a>
+    <a href="{% url "video_upload" %}">Upload Video</a>
+</nav>
 <body>
+{% block content %}
 <p>Hello World from the Video Scheduler App</p>
+{% endblock %}
 </body>
 </html>
